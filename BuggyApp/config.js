@@ -1,5 +1,5 @@
 
 const config = {
-IP_ADDRESS : '192.168.196.183',
+IP_ADDRESS : 'change with your ip address',
 }
 export default config;
