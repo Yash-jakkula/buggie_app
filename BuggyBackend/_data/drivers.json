@@ -1,0 +1,46 @@
+[
+  {
+    "name": "singamalai",
+    "role": "driver",
+    "address": "500088",
+    "email": "yash123456@gmail.com",
+    "password":"123456",
+    "location":{
+      "coordinates":[12.968405733753187,79.15989090857764]
+    },
+    "status": true
+},
+{
+  "name": "narasimha",
+  "role": "driver",
+  "address": "500088",
+  "email": "yash@gmail.com",
+  "password":"123456",
+  "location":{
+    "coordinates":[12.968387437177485,79.15940274655605]
+  },
+  "status": false
+},
+{
+  "name": "jai dev",
+  "role": "driver",
+  "address": "500088",
+  "email": "jaidev@gmail.com",
+  "password":"123456",
+  "location":{
+    "coordinates":[12.968288112885869,79.15846397343765]
+  },
+  "status": false
+},
+{
+  "name": "jai veer",
+  "role": "driver",
+  "address": "500088",
+  "email": "jaiveer@gmail.com",
+  "password":"123456",
+  "location":{
+    "coordinates":[12.969487843123549,79.16013297793172]
+  },
+  "status": true
+}
+]
