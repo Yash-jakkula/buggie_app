@@ -1,0 +1,60 @@
+buildscript {
+    ext {
+       buildToolsVersion = "34.0.0"
+       minSdkVersion = 21
+       compileSdkVersion = 34
+       targetSdkVersion = 34
+       ndkVersion = "25.1.8937393"
+       kotlinVersion = "1.8.0"
+       appCompatVersion = "1.4.2"      
+       googlePlayServicesLocationVersion = "21.0.1"  
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+// android/build.gradle
+
+allprojects {
+    repositories {
+        // Add Mapbox Maven repository
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: "sk.eyJ1IjoieWFzaHdhbnRoLWpha2t1bGEwMSIsImEiOiJjbHQ3bGtleG8wbGZjMmtxcmlhZmkxZDA0In0.Wz-3nn_Y4bpSKYS0PfoNdw"
+            }
+        }
+        // Required for react-native-background-geolocation
+        maven { 
+            url("${project(':react-native-background-geolocation').projectDir}/libs") 
+        }
+        maven { 
+            url 'https://developer.huawei.com/repo/' 
+        }
+        // Required for react-native-background-fetch
+        maven { 
+            url("${project(':react-native-background-fetch').projectDir}/libs") 
+        }
+        
+        
+        // Add default maven repository
+        mavenCentral()
+        // Add JCenter repository if not already added
+        jcenter()
+
+    }
+}
+
+
+apply plugin: "com.facebook.react.rootproject"
